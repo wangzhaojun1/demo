@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//构造函数
+
+		//模板
+		//构造函数
+
+		/*
+			优点：能够批量创建对象  简洁
+			缺点：依然为每一个新对象都生成新的方法，内存浪费
+		*/
+		/*
+			当构造函数被new的时候，系统做了如下事情：
+				1.创建一个object对象   new Object();
+				2.将对应的属性和方法绑定到obj
+				3.将该对象返回
+		*/
+		function Person(name,age) {
+			//添加属性
+			this.name=name;
+			this.age=age;
+			//添加方法
+			this.run=function(){
+				console.log(this.name+' is runing,.....');
+			};
+			this.say=function(){
+				console.log(this.name+' is speaking....');
+			};
+		}
+
+
+		//根据构造函数创建对象实例
+		var s=new Person('Lucy',21);
+		console.log(s.name,s.age);
+		s.run();
+		s.say();
+
+
+		var s1=new Person('Lily',22);
+		console.log(s1.name,s1.age);
+		s1.run();
+		s1.say();
+
+		console.log(s.run==s1.run);//false
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

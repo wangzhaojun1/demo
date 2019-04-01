@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//构造函数
+		function Student(name,no,age){
+			this.name=name;
+			this.no=no;
+			this.age=age;
+		}
+
+		Student.prototype.say=function(){
+			console.log(this.name+' 在说话');
+		};
+
+
+		var s=new Student('李四','1000',22);
+		console.log(s);
+		for(var i in s){
+			console.log(i);
+		}
+	</script>
+</body>
+</html>

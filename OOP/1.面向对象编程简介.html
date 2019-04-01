@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+			面向对象编程：OOP
+				class  类
+
+			1. JavaScript没有class  （ES5）
+				JavaScript的面向对象是一种非正统的怪异的面向对象
+			2. 使用Function来模拟对象
+			3.对象：
+				一切皆对象
+				对象包含：属性   方法
+
+				属性：特性                      变量
+				方法：功能                      函数
+
+			4.JavaScript内置对象
+				Date    Array    Function    RegExp   Object
+			5.自定义对象
+				Object
+		*/
+
+
+		var book=new Object();//创建一个对象实例
+		//添加属性
+		book.name='JavaScript入门';
+		book.page=300;
+		//添加方法
+		book.read=function () {
+			console.log('阅读');
+		};
+
+		//访问对象的属性
+		console.log(book.name,book.page);
+		//方法
+		book.read();
+
+
+
+		// var arr=[100,20,10,90,900];
+	/*	var arr=new Array(100,20,10,90,900);
+		console.log(arr.length);
+		arr.sort(function(a,b){
+			return a-b;
+		});
+
+		console.log(arr);*/
+
+		// var name='李四';
+		// var age=30;
+		// console.log(window.name,window.age);
+
+		// window.hh='你好';
+		// // var hh;
+		// console.log(hh);
+
+		// console.log(book.page);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

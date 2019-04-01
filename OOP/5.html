@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//创建猫对象
+		var cat=new Object();
+		cat.name='喵喵';
+		cat.age=2;
+		cat.color='白色';
+
+		cat.catchMouse=function () {
+			console.log(this.name+' 抓到一只大老鼠')	;
+		};
+
+
+		console.log(cat.name,cat.age,cat.color);
+		cat.catchMouse();
+
+
+
+		var cat1=new Object();
+		cat1.name='嗷嗷';
+		cat1.age=2;
+		cat1.color='花色';
+
+		cat1.catchMouse=function () {
+			console.log(this.name+' 抓到一只大老鼠')	;
+		};
+
+
+		console.log(cat1.name,cat1.age,cat1.color);
+		cat1.catchMouse();
+	</script>
+</body>
+</html>

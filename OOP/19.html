@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+			this  	对象
+			call
+			apply
+		*/
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		// var name='Jack';
+		// function show(){
+		// 	console.log(this.name);
+		// 	console.log(this);//window
+		// }
+
+		// window.show();
+
+
+		// var apple={
+		// 	color:"red",
+		// 	say:function(){
+		// 		console.log('我是'+this.color+'色的');//apple
+		// 	}
+		// };
+
+		// apple.say();
+
+		function Apple(color){
+			this.color=color;
+		}
+
+		// Apple.prototype.color='red';
+
+		Apple.prototype.say=function(){
+			console.log('My color is '+this.color);
+		};
+
+		var app=new Apple('red');//this   app
+		app.say();
+
+		var app1=new Apple('green');//  this   app1
+		app1.say();
+
+	</script>
+</body>
+</html>

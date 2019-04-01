@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//学生对象
+		var stu={
+			stuNo:'1000',
+			stuName:'李四',
+			test:function () {
+				console.log(this.stuName+' 考试中。。。。');
+			},
+			login:function(){
+				console.log(this.stuName+' 登陆.....');
+			},
+			printInfo:function(){
+				console.log(this.stuName,this.stuNo);
+			}
+		};
+
+
+		stu.printInfo();
+		stu.login();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

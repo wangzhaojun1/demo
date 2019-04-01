@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="../DOM/images/1.jpg" alt="" id="pic">
+	<a href="#" id="link">你好</a>
+	<script type="text/javascript">
+		var attr={
+			src:'../DOM/images/2.jpg',
+			alt:'提示信息',
+			title:'标题'
+		};
+
+		var attr1={
+			href:'http://www.baidu.com',
+			alt:'你好'
+		};
+
+		// //设置节点属性   attr 对象
+		function setAttr(obj,attr) {
+			for(var i in attr){
+				// console.log(i,attr[i]);
+				obj[i]=attr[i];//key  value
+			}
+			// obj.属性=值：
+		}
+
+
+
+
+		var oImg=document.querySelector('#pic');
+		// //设置img属性
+		// // oImg.属性名=值;
+		// // oImg[属性名]=值;
+		// // oImg.setAttribute();
+		// for(var i in attr){
+		// 	// console.log(i,attr[i]);
+		// 	oImg[i]=attr[i];
+		// }
+
+		setAttr(oImg,attr);
+
+		var oL=document.querySelector('#link');
+		setAttr(oL,attr1);
+	</script>
+</body>
+</html>

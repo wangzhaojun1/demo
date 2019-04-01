@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 500px;margin: auto;}
+		table{width: 500px;border: 1px solid gray;border-collapse: collapse;margin: 50px auto;}
+		th,td{line-height: 30px;text-align: center;border: 1px solid gray;}
+	</style>
+</head>
+<body>
+	<div>
+		<label for="">用户名：</label><input type="text"><br>
+		<label for="">密码：</label><input type="password"><br>
+		<label for="">重复密码：</label><input type="password"><br>
+		<label for="">电话：</label><input type="text"><br>
+		<a href="javascript:void(0)"><button>注册</button></a>
+		<button>显示</button><br>
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>用户名</th>
+				<th>密码</th>
+				<th>电话</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+		
+
+	<script type="text/javascript">
+		//1.点击 注册  录入数据
+		var btns=document.querySelectorAll('button');
+		var ipts=document.querySelectorAll('input');
+		var tb=document.querySelector('tbody');
+		var arr;
+		var arr0;
+		var key='ps';//本地保存数据的key值
+
+		//录入数据
+		btns[0].onclick=function(){
+			//获取输入框的值
+			var p=new Person(ipts[0].value,ipts[1].value,ipts[3].value);
+			//从本地获取数据
+			var s=getData(key);
+			if(s!=null){
+				//本地有数据
+				arr=JSON.parse(s);//将本地数据转换为数组
+			}else{
+				//本地无数据
+				arr=[];
+			}
+			arr.push(p);//将新注册用户存入数组			
+			setData(key,arr);//将数据保存在本地
+		};		
+
+		//显示数据
+		btns[1].onclick=function(){
+			clearTBody();
+			showData();
+		};
+		//2.点击 显示  显示所有数据
+		//3.点击 删除  删除数据
+
+		//将人员信息显示在表格中
+		function showData(){
+			arr0=JSON.parse(getData(key));//取出本地数据
+			if(arr0==null){
+				return;//本地无数据，不显示
+			}
+			arr0.forEach(function(item,index){
+				//创建一行
+				var tr=getTr(item.userName,item.pwd,item.tel);
+				//将行插入表格中
+				tb.appendChild(tr);
+			});
+		}
+
+		//清空tbody中的数据
+		function clearTBody(){
+			var trs=tb.getElementsByTagName('tr');//查询tbody中的行
+			//清空tbody行
+			for(var i=0,len=trs.length;i<len;i++){
+				tb.removeChild(trs[0]);				
+			}			
+		}
+
+		//删除数据  (从行内删除,删除本地)
+		function deleteData(oTr){					
+			var index=getIndex(oTr);//获取当前行的位置
+			console.log(index);
+			if(index==-1){
+				return;
+			}
+			tb.removeChild(oTr);//从页面中删除行
+			arr0.splice(index,1);//从数组中删除
+			//将删除后的数据保存在本地
+			setData(key,arr0);
+		}
+
+		//获取行对象在兄弟节点中的位置
+		function getIndex(oTr){
+			var trs=tb.getElementsByTagName('tr');//查询tbody中的行
+			for(var i=0;i<trs.length;i++){
+				if(oTr==trs[i]){
+					return i;
+				}
+			}
+			return -1;
+		}
+
+		//创建行 插入数据
+		function getTr(userName,pwd,tel){
+			var tr=document.createElement('tr');//创建行
+			//在行内添加列
+			tr.insertCell().innerHTML=userName;
+			tr.insertCell().innerHTML=pwd;
+			tr.insertCell().innerHTML=tel;
+			var td=tr.insertCell();
+			//最后一列
+			var link=document.createElement('a');
+			link.href='javascript:void(0)';
+			link.onclick=function(){
+				deleteData(this.parentNode.parentNode);
+			};
+			link.innerHTML='删除';
+			td.appendChild(link);
+
+			tr.appendChild(td);
+
+			return tr;
+		}
+
+		//存储数据
+		function setData(key,value){
+			value=JSON.stringify(value);//将value转换为字符串
+			localStorage.setItem(key,value);
+		}
+
+		//数据获取
+		function getData(key){
+			return localStorage.getItem(key);
+		}
+
+		//构造函数
+		function Person(userName,pwd,tel) {
+			this.userName=userName;
+			this.pwd=pwd;
+			this.tel=tel;
+		}
+	</script>
+</body>
+</html>

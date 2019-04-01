@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//创建学生
+		function createStudent(no,name,grade){
+			var obj=new Object();
+			//属性
+			obj.no=no;
+			obj.name=name;
+			obj.grade=grade;
+			//方法
+			obj.test=function(){
+				console.log(this.name+' 考试中......');
+			};
+			return obj;
+		}
+
+		var s1=createStudent('1000','李四','一年级');
+		var s2=createStudent('1001','Tom','二年级');
+
+		console.log(s1.no,s1.name,s1.grade);
+		s1.test();
+
+		console.log(s2.no,s2.name,s2.grade);
+		s2.test();
+	</script>
+</body>
+</html>

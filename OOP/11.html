@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			录入班级学生(姓名、年龄、学号)，输出所有学生的学号、姓名和年龄
+		*/
+
+		var reg=new Register();//创建对象实例
+		reg.loadInfo();//录入数据
+		reg.showInfo();
+
+		//构造函数
+		//注册
+		function Register(){
+			this.arr=[];//属性
+			//录入数据
+			this.loadInfo=function(){				
+				while(confirm('是否继续录入学生信息？')){										
+					var name=prompt('请输入姓名：');
+					var age=prompt('请输入年龄：');
+					var no=prompt('请输入学号：');
+					var stu=new Student(no,name,age);//创建学生对象				
+					//保存对象
+					this.arr.push(stu);
+				}
+			};
+			//输出数据
+			this.showInfo=function(){
+				this.arr.forEach(function(item){
+					console.log(item.name,item.age,item.no)
+				});
+			};
+		}
+
+		//创建学生
+		function Student(no,name,age){
+			this.no=no;
+			this.name=name;
+			this.age=age;
+
+			this.test=function(){
+				console.log(this.name+' 在考试....');
+			};
+		}
+	
+	</script>	
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//Object 对象  (类)
+		/*var obj=new Object();//对象的实例化
+		obj.age=10;
+		obj.name='Lucy';
+
+		obj.speak=function () {
+			console.log(this.name+' is say...');
+		};
+
+
+		obj.speak();*/
+
+
+
+		//工厂模式
+		/*function createStudnet(name,age){
+			var obj=new Object();//对象的实例化
+			obj.age=age;
+			obj.name=name;
+
+			obj.speak=function () {
+				console.log(this.name+' is say...');
+			};
+			return obj;
+		}
+
+
+		var s1=createStudnet('Tom',20);
+		var s2=createStudnet('Jack',22);
+
+		s1.speak();
+		s2.speak();*/
+
+
+		//构造函数
+		function Student(name,age,no){
+			this.no=no;
+			this.name=name;
+			this.age=age;
+			this.run=function(){
+				console.log(this.name+" 奔跑中.....");
+			};
+			this.showInfo=function(){
+				console.log('学号：'+this.no+',姓名：'+this.name+'，年龄：'+this.age);
+			};
+			//获取姓名
+			this.getName=function(){
+				return this.name;
+			}
+		}
+
+		var stu=new Student('李四',21,'1000');//对象的实例化
+		stu.showInfo();
+		// stu.name='Lucy';
+		// stu.showInfo();
+		// var name=stu.getName();
+		// console.log(name);
+		// name='LUcy';
+		// stu.showInfo();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

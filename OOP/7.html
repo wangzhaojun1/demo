@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			录入班级学生(姓名、年龄、学号)，当遇到exit时结束录入，输出所有学生的学号、姓名和年龄
+		*/
+
+		var arr=getData();//录入数据
+		// var arr=[{name: "李四", age: "20", no: "1000"},
+		// 		{name: "王五", age: "30", no: "10001"},
+		// 		{name: "Jack", age: "90", no: "1002"}];
+		// console.log(arr);
+		showData(arr);//输出数据
+
+		//录入数据
+		function getData() {
+			var arr=[];//数组
+			while(true){
+				var res=prompt('结束录入，请输入exit:');
+				if(res=='exit'){
+					break;
+				}
+				var name=prompt('请输入姓名：');
+				var age=prompt('请输入年龄：');
+				var no=prompt('请输入学号：');
+				var stu=createStudnet(no,name,age);//创建对象				
+				//保存对象
+				arr.push(stu);
+			}
+			return arr;
+		}
+
+		//输出数据
+		function showData(arr){
+			arr.forEach(function(item){
+				console.log(item.no,item.name,item.age);
+			});
+		}
+
+
+		//创建学生
+		function createStudnet(no,name,age){
+			var obj=new Object();
+			obj.no=no;
+			obj.name=name;
+			obj.age=age;
+			return obj;
+		}
+	
+	</script>	
+</body>
+</html>

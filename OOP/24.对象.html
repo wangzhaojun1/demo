@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//学生对象 学号，姓名，年龄
+		var stu={
+			//属性添加
+			init:function (no,name,age) {
+				this.no=no;
+				this.name=name;
+				this.age=age;
+			},
+			show:function(){
+				console.log('学号：'+this.no+'，姓名：'+this.name+'，年龄：'+this.age);
+			}
+		};
+
+		// console.log(stu.no);
+		// stu.init('1001','Jack',20);
+		// console.log(stu.no);
+		// stu.show();
+
+		var boy={
+			no:'',
+			name:'',
+			age:'',
+			info:function(){
+				console.log('学号：'+this.no+'，姓名：'+this.name+'，年龄：'+this.age);
+			}
+		};
+
+
+		stu.init.call(boy,'2000','张三',50);//完成对‘男孩’对象的初始化
+		stu.show();
+		boy.info();
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

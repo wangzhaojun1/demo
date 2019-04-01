@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<label for="">用户名：</label><input type="text"><br>
+	<label for="">密码：</label><input type="password"><br>
+	<a href="36success.html"><button>登录</button></a>
+
+	<script type="text/javascript">
+		var ips=document.querySelectorAll('input');
+		document.querySelector('button').onclick=function () {
+			//获取输入框数据
+			var name=ips[0].value;
+			var pwd=ips[1].value;
+			//将数据存储在本地
+			localStorage.setItem('name',name);
+			localStorage.setItem('pwd',pwd);
+		};
+	</script>
+</body>
+</html>

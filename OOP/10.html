@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Cat(name,age,color) {
+			this.name=name;
+			this.age=age;
+			this.color=color;
+			this.catchMouse=function(){
+				console.log(this.name+' 抓老鼠');
+			};
+		}
+
+
+		var c=new Cat('小花',2,'斑点');
+
+		console.log(c.name,c.age,c.color);
+		c.catchMouse();
+	</script>
+</body>
+</html>

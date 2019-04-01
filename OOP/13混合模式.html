@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+			1.自定义对象
+			2.工厂模式
+			3.构造函数
+			4.混合模式创建对象
+
+
+
+			prototype 原型
+		*/
+
+		//创建学生对象
+		function Student(stuNo,stuName,grade){
+			this.stuNo=stuNo;
+			this.stuName=stuName;
+			this.grade=grade;			
+		}
+
+		//添加方法
+		//将方法添加到原型中
+		Student.prototype.login=function(){
+			console.log(this.stuName+' login...');
+		};
+
+		Student.prototype.zy='计算机';
+
+
+		var s=new Student('1000','小强','2年级');
+		var s1=new Student('1001','小红','2年级');
+		// console.log(s.login==s1.login);
+		console.log(s.stuName,s.stuNo,s.grade);
+		s.login();
+		console.log(s1.stuName,s1.stuNo,s1.grade);
+		s1.login();
+
+		console.log(s1.login==s.login);//true
+		console.log(s1.zy,s.zy);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

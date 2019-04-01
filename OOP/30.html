@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//构造函数  人
+		function People(name,age){
+			this.name=name;
+			this.age=age;
+		}
+
+		//方法  说话
+		People.prototype.say=function(){
+			console.log(this.name+' 在说话');
+		};
+		//打印信息
+		People.prototype.showInfo=function(){
+			console.log('姓名：'+this.name+",年龄："+this.age);
+		};
+
+
+		var p=new People('李四',22);
+		p.say();
+		p.showInfo();
+
+		console.log('-----------------------------');
+
+		//构造函数  学生
+		function Student(name,age,no,grade){
+			// this.name=name;
+			// this.age=age;
+			this.no=no;
+			this.grade=grade;
+		}
+
+		// //学生方法
+		// Student.prototype.say=function(){
+		// 	console.log(this.name+' 在说话');
+		// };
+
+		// //打印信息
+		// Student.prototype.showInfo=function(){
+		// 	console.log('姓名：'+this.name+",年龄："+this.age);
+		// };
+		//考试
+		Student.prototype.test=function(){
+			console.log(this.name=' 在进行期末考试....');
+		};
+
+		//创建对象实例
+		var s=new Student('小花',20,'1000','一年级');
+		s.say();
+		// s.showInfo();
+		// s.test();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

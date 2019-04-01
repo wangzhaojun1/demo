@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			函数：
+				arguments
+				prototype    原型  对象
+				call   
+				apply
+		*/
+
+		//人 对象
+		function Person(name,age) {
+			this.name=name;
+			this.age=age;
+		}
+
+		// Person.prototype.say=function(){
+		// 	console.log(this.name+' 说话');
+		// };
+
+		// var p=new Person('小花',20);
+		// p.say();
+
+		console.log(Person);
+		console.log(Person.prototype);// __proto__
+	</script>
+</body>
+</html>

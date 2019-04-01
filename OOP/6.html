@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		//工厂模式创建对象
+		/*
+			优点：方便，能够批量产生对象
+			缺点：为每一个新对象都追加了新方法,内存浪费
+		*/
+
+		//创建 猫 对象
+		function createCat(name,age,color) {
+			var cat=new Object();
+			cat.name=name;
+			cat.age=age;
+			cat.color=color;
+
+			cat.catchMouse=function () {
+				console.log(this.name+' 抓到一只大老鼠')	;
+			};
+			return cat;
+		}
+
+		//创建 猫 对象实例的过程
+		var cat1=createCat('小花',2,'梅花色');
+
+		console.log(cat1.name,cat1.age,cat1.color);
+		cat1.catchMouse();
+
+		var cat2=createCat('小黄',2,'黄色');
+		console.log(cat2.name,cat2.age,cat2.color);
+		cat2.catchMouse();
+
+		console.log(cat1.catchMouse==cat2.catchMouse);//false
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

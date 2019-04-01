@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//样式对象
+		var myStyle={
+			width:'100px',
+			height:'100px',
+			backgroundColor:'red',
+			border:'1px solid gray'
+		};
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+
+	<script type="text/javascript">
+		var o=document.querySelector('#box');
+		// console.log(o);
+		//修改div的样式
+		// o.style.width=myStyle.width;
+		// o.style.height=myStyle.height;
+		// o.style.backgroundColor=myStyle.backgroundColor;
+		// console.log(myStyle.width);
+		for(var i in myStyle){
+			// console.log(i);
+			o.style[i]=myStyle[i];
+		}
+
+
+
+		// var arr=[];
+		// arr['姓名']='李四';
+		// for(var i in arr){
+
+		// }
+
+		// var person={
+		// 	name:'李四',
+		// 	age:20,
+		// 	address:'瑞达路'
+		// };
+
+		// for(var i in person){
+		// 	// console.log(i);//name,age,address
+		// 	// console.log(person.i);
+		// 	console.log(i,person[i]);
+		// }
+
+		// o.src
+		// o['src']
+	</script>
+</body>
+</html>

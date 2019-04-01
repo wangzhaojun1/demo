@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+			1.创建电脑对象，电脑对象有关机和开机方法
+			2.创建三个学生对象，并且输出学生的学号、姓名、年级和年龄
+			3.创建一个水果对象，输出水果的种类，颜色，重量
+
+			this 当前对象    函数在运行时的上下文
+		*/
+
+
+		//1.
+		// var computer={
+		// 	close:function () {
+		// 		console.log('关机了');
+		// 	},
+		// 	open:function(){
+		// 		console.log('开机');
+		// 	}
+		// };
+
+		// computer.open();
+		// computer.close();
+
+		// function Studnet(no,stuName,age,grade){
+		// 	this.no=no;
+		// 	this.stuName=stuName;
+		// 	this.age=age;
+		// 	this.grade=grade;
+		// }
+		// //在原型中添加
+		// Studnet.prototype.print=function(){
+		// 	console.log(this.no,this.stuName,this.age,this.grade);
+		// };
+
+		// var s1=new Studnet('1000','Jack',22,'二年级');
+		// var s2=new Studnet('1001','Jack',23,'二年级');
+		// var s3=new Studnet('1002','Jack',24,'三年级');
+
+		// s1.print();
+		// s2.print();
+		// s3.print();
+
+		var fruit={
+			color:'red',
+			kind:'苹果',
+			weight:'500',
+			printInfo:function(){
+				console.log(this.kind,this.color,this.weight);
+			}
+		};
+
+
+		fruit.printInfo();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

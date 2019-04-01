@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+		// function show() {
+		// 	console.log('run')
+		// }
+
+		// show.call();
+		// show.apply();
+
+		//水果
+		var fru={
+			color:'red',
+			say:function(){
+				console.log('My color is '+this.color);
+			}
+		};
+		//香蕉
+		var ban={
+			color:'yellow'
+		};
+
+
+		// fru.say();
+		fru.say.call(ban);//修改指定函数内this的值
+		// fru.say.apply(ban);
+
+
+		// console.log('hello');
+
+
+		// //单个参数
+		// function log(item){
+		// 	console.log(item);
+		// }
+
+		//多参
+		// function log(){
+		// 	//arguments  类数组
+		// 	// console.log(arguments);
+		// }
+
+
+		// log('world');
+		// log(1,2,3);
+		// log(1,2,3,4,4,45);
+
+
+		// var arr=[2,3];
+		// var arr0=[23,33,44];
+
+		// // arr.push(arr0);
+		// Array.prototype.push.apply(arr,arr0);//arr.push
+
+		// console.log(arr);
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

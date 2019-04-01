@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+			创建一个学生对象  学号、姓名、年级、年龄 
+			学习，跑步
+		*/
+
+		var stu=new Object();//创建学生对象
+		//添加属性
+		stu.id=1000;
+		stu.name='Jack';
+		stu.grade='二年级';
+		stu.age=22;
+		//添加方法
+		stu.study=function () {
+			// console.log(stu.name+'学习');	
+			console.log(this.name+' 学习');
+		};
+		stu.run=function(){
+			console.log(this.name+' 跑步ing....');
+		};
+
+
+
+		//访问属性和方法
+		console.log(stu.id,stu.name,stu.age,stu.grade);
+		stu.study();
+		stu.run();
+
+
+
+		// function show(){
+		// 	console.log(this);
+		// }
+
+		// window.show();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+			继承：
+
+			 被继承者：     people           父类(基类、超类)
+			 继承者：       student          子类(派生类)
+
+
+			继承是单项的
+		*/
+
+
+		//构造函数  人
+		function People(name,age){
+			this.name=name;
+			this.age=age;
+		}
+
+		//方法  说话
+		People.prototype.say=function(){
+			console.log(this.name+' 在说话');
+		};
+		//打印信息
+		People.prototype.showInfo=function(){
+			console.log('姓名：'+this.name+",年龄："+this.age);
+		};
+
+
+		//构造函数  学生
+		function Student(name,age,no,grade){
+			//实现属性的继承：让父类完成相同属性的初始化
+			People.call(this,name,age);//对象冒充
+			//自己完成特有属性的初始化
+			this.no=no;
+			this.grade=grade;
+		}
+
+		//方法的继承
+		//遍历人的原型
+		for(var i in People.prototype){
+			//将人原型中所有的方法放入学生的原型中
+			Student.prototype[i]=People.prototype[i];
+		}
+
+		//考试
+		Student.prototype.test=function(){
+			console.log(this.name=' 在进行期末考试....');
+		};
+
+		//创建人对象实例
+		var p=new People('李四',22);
+		p.say();
+		p.showInfo();
+		// p.test();
+
+		console.log('-----------------------------');
+
+		//创建对象实例
+		var s=new Student('小花',20,'1000','一年级');
+		s.say();
+		s.showInfo();
+		// console.log(s);
+		s.test();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
